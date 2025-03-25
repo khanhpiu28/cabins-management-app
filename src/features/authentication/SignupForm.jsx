@@ -17,7 +17,7 @@ function SignupForm() {
   }
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form type="regular" onSubmit={handleSubmit(onSubmit)}>
       <FormRow label="Full name" error={errors?.fullName?.message}>
         <Input
           type="text"
@@ -75,7 +75,12 @@ function SignupForm() {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button disabled={isPending} variation="secondary" type="reset">
+        <Button
+          disabled={isPending}
+          onClick={reset}
+          variation="secondary"
+          type="reset"
+        >
           Cancel
         </Button>
         <Button disabled={isPending}>Create new user</Button>
